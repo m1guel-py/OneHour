@@ -1,0 +1,46 @@
+@keyframes popUp {
+    from {background-color: #f0361d; color: white; font-size: 25px;}
+    to {background-color: white; color:black; font-size: 27px;}
+}
+
+body {
+    background-color: #2d17fc;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#timer {
+    font-size: 90px;
+    margin: 0;
+}
+
+#subtitle {
+    font-size: 35px;
+}
+
+#stop {
+    padding: 8px 10px 8px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f0361d;
+    font-size: 25px;
+    color: white;
+}
+
+#stop:hover {
+    animation-name: popUp;
+    animation-duration: 1s;
+    font-size: 27px;
+    background-color: white;
+    color: black;
+}
