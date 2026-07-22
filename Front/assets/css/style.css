@@ -1,7 +1,5 @@
-@keyframes popUp {
-    from {background-color: #f0361d; color: white; font-size: 25px;}
-    to {background-color: white; color:black; font-size: 27px;}
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
     background-color: #0c0c0c;
@@ -10,6 +8,7 @@ body {
     padding: 0;
     height: 100%;
     overflow: hidden;
+    font-family: 'Jetbrains Mono';
 }
 
 
@@ -54,6 +53,7 @@ nav ul {
 main {
     display: grid;
     grid-template-columns: 300px 1fr;
+    height: calc(100vh - 66px);
 }
 
 main aside {
@@ -91,20 +91,48 @@ main aside hr {
 
 .center {
     display: flex;
-    width: 100vw;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 #timer {
     font-size: 90px;
+    font-family: 'Inter';
+    font-weight: 500;
     margin: 0;
 }
 
 #subtitle {
     font-size: 35px;
+    color: #7df14d;
+}
+
+.button {
+    font-size: 20px;
+    padding: 7px 30px 7px 30px;
+    background-color: transparent;
+    border: 1px solid #444444;
+    text-transform: uppercase;
+    color: #8f8e8e;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #2A2A2A;
+    color: #7DF14D;
+    border-color: #7DF14D;
+}
+
+.selection {
+    background-color: #7df14d;
+    color: black;
+}
+
+button {
+    cursor: pointer;
 }
 
 /*
@@ -159,8 +187,22 @@ Timeline vertical
     height: 50px;
     padding: 0;
     margin-left: 41px;
+    border-style: dashed;
 }
 
 #marS {
     margin-bottom: 20px;
+}
+
+#aspas {
+    margin: 7px 1px 0 13px;
+}
+
+#reflexao {
+    color: #8f8e8e;
+    padding: 0 50px 0 0;
+}
+
+#author {
+    color: #7df14d;
 }
