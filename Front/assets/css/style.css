@@ -120,15 +120,32 @@ main aside hr {
     font-weight: bold;
 }
 
-.button:hover {
+#reset:hover {
     background-color: #2A2A2A;
     color: #7DF14D;
     border-color: #7DF14D;
 }
 
-.selection {
+.select {
     background-color: #7df14d;
     color: black;
+}
+
+.select:hover {
+    background-color: #2A2A2A;
+    color: #7DF14D;
+    border-color: #7DF14D;
+}
+
+.select.paused {
+    background-color: #cf2d2d;
+    color: black;
+}
+
+.select.paused:hover {
+    background-color: #2A2A2A;
+    color: #cf2d2d;
+    border-color: #cf2d2d;
 }
 
 button {
@@ -177,7 +194,7 @@ Timeline vertical
     justify-content: center;
 }
 
-#select {
+#selectT {
     border: 2px solid #7df14d;
 }
 
