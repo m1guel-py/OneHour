@@ -4,8 +4,8 @@ const reset = document.getElementById("reset");
 const animationHover = document.getElementsByClassName("selection")
 let idStart;
 
-minute = 30;
-seconds = 0;
+minute = 0;
+seconds = 3;
 mode = 0;
 
 start.addEventListener("click", iniciar);

@@ -26,6 +26,12 @@ nav ul {
     border-bottom: 1px #2b2b2b solid;
 }
 
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+
 #left {
     display: flex;
     gap: 20px;
