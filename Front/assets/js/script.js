@@ -1,12 +1,12 @@
 let time = document.getElementById("timer");
 let start = document.getElementById("start");
 const reset = document.getElementById("reset");
-const animationHover = document.getElementsByClassName("selection")
+let timerCent = document.getElementById("center");
 let idStart;
 
-minute = 0;
-seconds = 3;
-mode = 0;
+let minute = 0;
+let seconds = 3;
+let mode = 0;
 
 start.addEventListener("click", iniciar);
 reset.addEventListener("click", resetar)
@@ -28,7 +28,7 @@ function iniciar() {
 function timerStudy() {
     if (minute === 0 && seconds === 0) {
         clearInterval(idStart);
-        window.location.href = "pages/break.html";
+        location.href = "pages/break.html";
         return;
     }
     if (seconds <= 0) {

@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Focus in OneHour</title>
+    <link rel="stylesheet" href="../assets/css/break.css">
 </head>
-<body>
-    
-</body>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <div id="left">
+                        <li><img src="../assets/image/logoBreak.png" alt="Command Logo Break" width="35"></li>
+                        <li id="titleNav">OneHour Focus</li>
+                    </div>
+                    
+                    <div id="right">
+                        <li class="subtitleNav"> <a href="https://github.com/miguelNaN/OneHour"><img src="../assets/image/github-logo.png" alt="github logo" width="20"> Github</a></li>
+                        <li class="subtitleNav"><img src="../assets/image/discord.png" alt="Discord logo" width="20"> Discord</li>
+                        <li><img src="../assets/image/sun.png" alt="Sun image for logotype" width="25"></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <aside>
+                <h2>Session</h2>
+                <p id="cycle">Cycle 1 of 3</p>
+
+                <h2>Mode</h2>
+                <p id="mode">Focus</p>
+
+                <h2 id="marS">Session Timeline</h2>
+
+                <div id="timeline">
+                    <div class="blocoLine">
+                        <p class="circle" id="selectT">1</p>
+                        <div class="textInf">
+                            <p>Focus</p>
+                            <p class="timeText">30 min</p>
+                        </div>
+                    </div>
+
+                    <div class="lineTimeline"></div>
+                    
+                    <div class="blocoLine">
+                        <p class="circle">2</p>
+                        <div class="textInf">
+                            <p>Break</p>
+                            <p class="timeText">15 min</p>
+                        </div>
+                    </div>
+
+                    <div class="lineTimeline"></div>
+
+                    <div class="blocoLine">
+                        <p class="circle">3</p>
+                        <div class="textInf">
+                            <p>Focus</p>
+                            <p class="timeText">30 min</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <img src="assets/image/aspas.png" alt="aspas" id="aspas" width="40px">
+                <p id="reflexao">Without discipline, talent is useless.</p>
+                <p id="author">- Cristiano Ronaldo</p>
+
+
+            </aside>
+
+            <div id="center">
+                <div id="container">
+                    <h1 id="timer">30 : 00</h1>
+                    <h2 id="subtitle">Focus</h2>
+                    <button class="select button" id="start">Start</button>
+                    <button class="button" id="reset">Reset</button>
+                </div>
+            </div>
+        </main>
+
+        <script src="../assets/js/break.js" async></script>
+    </body>
 </html>

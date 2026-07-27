@@ -95,7 +95,8 @@ main aside hr {
     background-color: #444444;
 }
 
-.center {
+#center {
+    transition: opacity 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
