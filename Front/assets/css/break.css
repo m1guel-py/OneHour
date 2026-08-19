@@ -85,7 +85,7 @@ main aside p {
 }
 
 #mode {
-    color: #7df14d;
+    color: #cf2d2d;
 }
 
 main aside hr {
@@ -113,7 +113,7 @@ main aside hr {
 
 #subtitle {
     font-size: 35px;
-    color: #7df14d;
+    color: #cf2d2d;
 }
 
 .button {
@@ -134,7 +134,7 @@ main aside hr {
 }
 
 .select {
-    background-color: #7df14d;
+    background-color: #cf2d2d;
     color: black;
 }
 
@@ -202,7 +202,7 @@ Timeline vertical
 }
 
 #selectT {
-    border: 2px solid #7df14d;
+    border: 2px solid #cf2d2d;
 }
 
 .lineTimeline {
@@ -228,5 +228,5 @@ Timeline vertical
 }
 
 #author {
-    color: #7df14d;
+    color: #cf2d2d;
 }
