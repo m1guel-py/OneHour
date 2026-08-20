@@ -118,6 +118,7 @@ main aside hr {
 
 .button {
     font-size: 20px;
+    font-family: "Jetbrains Mono";
     padding: 7px 30px 7px 30px;
     background-color: transparent;
     border: 1px solid #444444;
