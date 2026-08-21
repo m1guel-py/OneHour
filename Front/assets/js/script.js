@@ -12,8 +12,8 @@ let cycleText = document.getElementById("cycle");
 let idStart;
 
 let cycle = 1;
-let minute = 0;
-let seconds = 2;
+let minute = 30;
+let seconds = 0;
 let changeButton = true;
 
 // CSS Change
@@ -103,8 +103,8 @@ function reset() {
 // Cycle mode
 function typeCycle(){
     if (cycle != 2){
-        minute = 0;
-        seconds = 2;
+        minute = 30;
+        seconds = 0;
         link.href = "./assets/css/style.css";
         logoImage.src = "./assets/image/logo.png";
         aspasImage.src = "./assets/image/aspas.png";
@@ -112,8 +112,8 @@ function typeCycle(){
         changeCycleText();
     }
     else {
-        minute = 0;
-        seconds = 2;
+        minute = 15;
+        seconds = 0;
         link.href = "./assets/css/break.css";
         logoImage.src = "./assets/image/logoBreak.png";
         aspasImage.src = "./assets/image/aspasBreak.png";
