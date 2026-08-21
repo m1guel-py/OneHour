@@ -1,6 +1,9 @@
 //
 // Variables
 //
+
+// Logic
+
 let timerDisplay = document.getElementById("timer");
 let buttonStart = document.getElementById("start");
 let buttonReset = document.getElementById("reset");
@@ -12,6 +15,19 @@ let cycle = 1;
 let minute = 0;
 let seconds = 2;
 let changeButton = true;
+
+// CSS Change
+
+let link = document.getElementById("cssLink");
+
+// HTML Change
+
+let logo = document.getElementById("logotype");
+
+// timeline objects
+let timeline1 = document.getElementById("timeline1");
+let timeline2 = document.getElementById("timeline2");
+let timeline3 = document.getElementById("timeline3");
 
 //
 // Call functions
@@ -79,11 +95,30 @@ function reset() {
 // Cycle mode
 function typeCycle(){
     if (cycle != 2){
-        minute = 30;
-        seconds = 0;
+        minute = 0;
+        seconds = 2;
+        link.href = "./assets/css/style.css";
+        logo.src = "./assets/image/logo.png";
+        timelineSelect()
     }
     else {
-        minute = 15;
-        seconds = 0;
+        minute = 0;
+        seconds = 2;
+        link.href = "./assets/css/break.css";
+        logo.src = "./assets/image/logoBreak.png";
+        timelineSelect()
     }
+}
+
+function timelineSelect(){
+    if (cycle == 1){
+        timeline1.classList.add("selectT");
+    }
+    else if (cycle == 2){
+        timeline2.classList.add("selectT");
+    }
+    else {
+        timeline3.classList.add("selectT");
+    }
+
 }
