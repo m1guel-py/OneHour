@@ -33,6 +33,9 @@ let timeline1 = document.getElementById("timeline1");
 let timeline2 = document.getElementById("timeline2");
 let timeline3 = document.getElementById("timeline3");
 
+// Song
+let soundChangeCycle = new Audio("./assets/audio/alarm.mp3");
+
 //
 // Call functions
 //
@@ -76,6 +79,7 @@ function timer() {
     if (minute === 0 && seconds === 1) {
         cycle >= 3 || cycle < 0? cycle = 1 : cycle+=1;
         cycleText.innerText = `Cycle ${String(cycle)} of 3`;
+        soundChangeCycle.play();
         reset();
     }
     else {
@@ -137,11 +141,11 @@ function changeCycleText(){
     if (cycle != 2){
         modeText.innerHTML = "Focus";
         reflectionText.innerHTML = "Without discipline, talent is useless.";
-        authorText.innerHTML = "- Cristiano Ronaldo"
+        authorText.innerHTML = "- Cristiano Ronaldo";
     }
     else {
         modeText.innerHTML = "Break";
         reflectionText.innerHTML = "Resting is also part of the journey.";
-        authorText.innerHTML = "- Alisson Zigulich"
+        authorText.innerHTML = "- Alisson Zigulich";
     }
 }
