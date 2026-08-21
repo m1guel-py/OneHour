@@ -22,7 +22,11 @@ let link = document.getElementById("cssLink");
 
 // HTML Change
 
-let logo = document.getElementById("logotype");
+let logoImage = document.getElementById("logotype");
+let aspasImage = document.getElementById("aspas");
+let modeText = document.getElementById("mode");
+let authorText = document.getElementById("author");
+let reflectionText = document.getElementById("reflexao");
 
 // timeline objects
 let timeline1 = document.getElementById("timeline1");
@@ -98,27 +102,46 @@ function typeCycle(){
         minute = 0;
         seconds = 2;
         link.href = "./assets/css/style.css";
-        logo.src = "./assets/image/logo.png";
-        timelineSelect()
+        logoImage.src = "./assets/image/logo.png";
+        aspasImage.src = "./assets/image/aspas.png";
+        timelineSelect();
+        changeCycleText();
     }
     else {
         minute = 0;
         seconds = 2;
         link.href = "./assets/css/break.css";
-        logo.src = "./assets/image/logoBreak.png";
-        timelineSelect()
+        logoImage.src = "./assets/image/logoBreak.png";
+        aspasImage.src = "./assets/image/aspasBreak.png";
+        timelineSelect();
+        changeCycleText();
     }
 }
 
 function timelineSelect(){
     if (cycle == 1){
         timeline1.classList.add("selectT");
+        timeline3.classList.remove("selectT");
     }
     else if (cycle == 2){
         timeline2.classList.add("selectT");
+        timeline1.classList.remove("selectT");
     }
     else {
         timeline3.classList.add("selectT");
+        timeline2.classList.remove("selectT");
     }
+}
 
+function changeCycleText(){
+    if (cycle != 2){
+        modeText.innerHTML = "Focus";
+        reflectionText.innerHTML = "Without discipline, talent is useless.";
+        authorText.innerHTML = "- Cristiano Ronaldo"
+    }
+    else {
+        modeText.innerHTML = "Break";
+        reflectionText.innerHTML = "Resting is also part of the journey.";
+        authorText.innerHTML = "- Alisson Zigulich"
+    }
 }
