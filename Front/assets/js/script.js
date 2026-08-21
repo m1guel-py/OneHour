@@ -9,8 +9,8 @@ let cycleText = document.getElementById("cycle");
 let idStart;
 
 let cycle = 1;
-let minute;
-let seconds;
+let minute = 0;
+let seconds = 2;
 let changeButton = true;
 
 //
@@ -28,7 +28,7 @@ buttonReset.addEventListener("click", reset);
 function getStarted() {
     // Change button to Pause and start interval.
     if (changeButton){
-        if ()
+        idStart = setInterval(timer, 1000);
         buttonStart.innerText = "Pause";
         buttonStart.classList.add("paused");
         changeButton = !changeButton;
@@ -43,12 +43,7 @@ function getStarted() {
 
 // This is Timer.
 function timer() {
-    if (minute === 0 && seconds === 1) {
-        clearInterval(idStart);
-        cycle+=1;
-        cycleText.innerText = `Cycle ${String(cycle)} of 3`;
-        reset()
-    }
+    // Check seconds for change minutes and seconds.
     if (seconds <= 0) {
         minute--;
 
@@ -57,15 +52,23 @@ function timer() {
         }
     }
 
-    seconds--;
+    // Check if the timer ended.
+    if (minute === 0 && seconds === 1) {
+        cycle >= 3 || cycle < 0? cycle = 1 : cycle+=1;
+        cycleText.innerText = `Cycle ${String(cycle)} of 3`;
+        reset();
+    }
+    else {
+        seconds--;
+    }
 
+    // Show value timer.
     timerDisplay.innerText = `${String(minute).padStart(2, "0")} : ${String(seconds).padStart(2, "0")}`;
 }
 
 // Reset Timer for begin.
 function reset() {
-    minute = 30;
-    seconds = 0;
+    typeCycle();
     clearInterval(idStart);
     timerDisplay.innerText = `${String(minute).padStart(2, "0")} : ${String(seconds).padStart(2, "0")}`;
     changeButton = !changeButton;
@@ -75,16 +78,12 @@ function reset() {
 
 // Cycle mode
 function typeCycle(){
-    if (cycle > 0 && cycle <= 3){
-        if (cycle === 1){
-            minute = 30;
-            seconds = 0;
-            idStart = setInterval(timer, 1000);
-        }
-        else {
-            minute = 15;
-            seconds = 0;
-            timer();
-        }
+    if (cycle != 2){
+        minute = 30;
+        seconds = 0;
+    }
+    else {
+        minute = 15;
+        seconds = 0;
     }
 }
