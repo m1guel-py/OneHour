@@ -43,10 +43,12 @@ let tapButton = new Audio("./assets/audio/tap.mp3");
 
 buttonStart.addEventListener("click", () => {
     getStarted();
+    tapButton.currentTime = 0;
     tapButton.play();
 });
 buttonReset.addEventListener("click", () => {
     reset();
+    tapButton.currentTime = 0;
     tapButton.play();
 });
 
@@ -86,6 +88,7 @@ function timer() {
     if (minute === 0 && seconds === 1) {
         cycle >= 3 || cycle < 0? cycle = 1 : cycle+=1;
         cycleText.innerText = `Cycle ${String(cycle)} of 3`;
+        tapButton.currentTime = 0;
         soundChangeCycle.play();
         reset();
     }
