@@ -35,13 +35,20 @@ let timeline3 = document.getElementById("timeline3");
 
 // Song
 let soundChangeCycle = new Audio("./assets/audio/alarm.mp3");
+let tapButton = new Audio("./assets/audio/tap.mp3");
 
 //
 // Call functions
 //
 
-buttonStart.addEventListener("click", getStarted);
-buttonReset.addEventListener("click", reset);
+buttonStart.addEventListener("click", () => {
+    getStarted();
+    tapButton.play();
+});
+buttonReset.addEventListener("click", () => {
+    reset();
+    tapButton.play();
+});
 
 //
 // Functions
