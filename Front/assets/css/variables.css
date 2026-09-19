@@ -1,0 +1,28 @@
+:root {
+    --background:#0c0c0c;
+    --widgetbackground:#121212;
+
+    /*mode*/
+    --mode: #7df14d;
+
+    /*button*/
+    --hover: #2A2A2A;
+    --paused: #cf2d2d;
+
+    /*border*/
+    --border:#2b2b2b;
+    --borderhover: #7DF14D;
+
+    /*fonts*/
+    --textall: white;
+    --textcolor1: #444444;
+    --textcolor2: #8f8e8e;
+    --textcolor3: black;
+    --texthover:#7DF14D;
+}
+
+body.break {
+    --mode: #cf2d2d;
+    --borderhover: #cf2d2d;
+    --texthover: #cf2d2d;
+}

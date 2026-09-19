@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus in OneHour</title>
+    <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" id="cssLink" href="./assets/css/style.css">
 </head>
-    <body>
+    <body id="body">
         <header>
             <nav>
                 <ul>
@@ -14,7 +15,7 @@
                         <li><img src="./assets/image/logo.png" alt="Command Logo" id="logotype" width="35"></li>
                         <li id="titleNav">OneHour Focus</li>
                     </div>
-                    <li><img src="./assets/image/settingImage.png" alt="Settings" width="35"></li>
+                    <li><img src="./assets/image/settingImage.png" alt="Settings" width="35" id="settings"></li>
                 </ul>
             </nav>
         </header>
@@ -76,6 +77,8 @@
                     <button class="button" id="reset">Reset</button>
                 </div>
             </div>
+
+            <dialog id="settingPop"></dialog>
         </main>
 
         <script src="./assets/js/script.js" async></script>

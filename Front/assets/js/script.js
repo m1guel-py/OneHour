@@ -3,17 +3,19 @@
 //
 
 // Logic
-
+let body = document.getElementById("body");
 let timerDisplay = document.getElementById("timer");
 let buttonStart = document.getElementById("start");
 let buttonReset = document.getElementById("reset");
 let timerCent = document.getElementById("center");
 let cycleText = document.getElementById("cycle");
+let settings = document.getElementById("settings");
+let settingPop = document.getElementById("settingPop");
 let idStart;
 
 let cycle = 1;
-let minute = 0;
-let seconds = 2;
+let minute = 30;
+let seconds = 0;
 let changeButton = true;
 
 // CSS Change
@@ -46,11 +48,17 @@ buttonStart.addEventListener("click", () => {
     tapButton.currentTime = 0;
     tapButton.play();
 });
+
 buttonReset.addEventListener("click", () => {
     reset();
     tapButton.currentTime = 0;
     tapButton.play();
 });
+
+settings.addEventListener("click", () => {
+    settingPop.showModal()
+})
+
 
 //
 // Functions
@@ -116,16 +124,16 @@ function typeCycle(){
     if (cycle != 2){
         minute = 30;
         seconds = 0;
-        link.href = "./assets/css/style.css";
+        changeMode(false);
         logoImage.src = "./assets/image/logo.png";
         aspasImage.src = "./assets/image/aspas.png";
         timelineSelect();
         changeCycleText();
     }
     else {
-        minute = 0;
-        seconds = 3;
-        link.href = "./assets/css/break.css";
+        minute = 15;
+        seconds = 0;
+        changeMode(true);
         logoImage.src = "./assets/image/logoBreak.png";
         aspasImage.src = "./assets/image/aspasBreak.png";
         timelineSelect();
@@ -159,4 +167,8 @@ function changeCycleText(){
         reflectionText.innerHTML = "Resting is also part of the journey.";
         authorText.innerHTML = "- Alisson Zigulich";
     }
+}
+
+function changeMode(whatColor){
+    whatColor ? body.classList.add("break") : body.classList.remove("break");
 }
