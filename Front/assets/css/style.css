@@ -160,20 +160,6 @@ button {
     cursor: pointer;
 }
 
-#premiumMode {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-}
-
-#premiumButton {
-    background-color: #4df176;
-}
-
-#premiumButton:hover {
-    background-color: #2A2A2A;
-}
-
 /*
 Timeline vertical
 */
