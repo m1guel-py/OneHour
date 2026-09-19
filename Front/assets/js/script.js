@@ -12,8 +12,8 @@ let cycleText = document.getElementById("cycle");
 let idStart;
 
 let cycle = 1;
-let minute = 30;
-let seconds = 0;
+let minute = 0;
+let seconds = 2;
 let changeButton = true;
 
 // CSS Change
@@ -89,6 +89,7 @@ function timer() {
         cycle >= 3 || cycle < 0? cycle = 1 : cycle+=1;
         cycleText.innerText = `Cycle ${String(cycle)} of 3`;
         tapButton.currentTime = 0;
+        soundChangeCycle.currentTime = 0;
         soundChangeCycle.play();
         reset();
     }
@@ -122,8 +123,8 @@ function typeCycle(){
         changeCycleText();
     }
     else {
-        minute = 15;
-        seconds = 0;
+        minute = 0;
+        seconds = 3;
         link.href = "./assets/css/break.css";
         logoImage.src = "./assets/image/logoBreak.png";
         aspasImage.src = "./assets/image/aspasBreak.png";
