@@ -284,5 +284,6 @@ SETTINGPOPUP
 
 #messageError {
     color: var(--paused);
+    margin-left: 17%;
 }
 

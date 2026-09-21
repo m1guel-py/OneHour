@@ -25,6 +25,7 @@ let changeButton = true;
 // CSS Change
 
 let link = document.getElementById("cssLink");
+let title = document.getElementById("title");
 
 // HTML Change
 
@@ -80,7 +81,7 @@ optionsTime.addEventListener("submit", (event) => {
     convertFbreakSeconds = Number(fbreaktime.value.split(":")[1]);
 
 
-    if (convertFfocusSeconds <= 60 || convertFbreakSeconds <= 60){
+    if ((convertFfocusSeconds <= 60 && convertFfocusSeconds >= 0) || (convertFbreakSeconds <= 60 && convertFbreakSeconds >= 0)){
         if (ffocustime.value != "") { 
             focustimer = convertFfocusMinute;
             focusseconds = convertFfocusSeconds;
@@ -137,7 +138,7 @@ function timer() {
     }
 
     // Check if the timer ended.
-    if (minute === 0 && seconds === 1) {
+    if (minute <= 0 && seconds <= 1) {
         cycle >= 3 || cycle < 0 ? cycle = 1 : cycle+=1;
         cycleText.innerText = `Cycle ${String(cycle)} of 3`;
         tapButton.currentTime = 0;
@@ -151,6 +152,7 @@ function timer() {
 
     // Show value timer.
     timerDisplay.innerText = `${String(minute).padStart(2, "0")} : ${String(seconds).padStart(2, "0")}`;
+    title.innerHTML = `${String(minute).padStart(2, "0")}:${String(seconds).padStart(2, "0")} - OneHour`
 }
 
 // Reset Timer for begin.
