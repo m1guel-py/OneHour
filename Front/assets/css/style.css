@@ -271,11 +271,18 @@ SETTINGPOPUP
     padding: 5px 10px;
 }
 
-#message {
+.message {
     display: none;
-    color: var(--texthover);
     position: absolute;
     bottom: 20px;
     margin-left: 35%;
+}
+
+#message {
+    color: var(--texthover);
+}
+
+#messageError {
+    color: var(--paused);
 }
 

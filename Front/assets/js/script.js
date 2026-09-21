@@ -16,8 +16,10 @@ let idStart;
 let cycle = 1;
 let focustimer = 30;
 let breaktimer = 15;
+let focusseconds = 0;
+let breakseconds = 0;
 let minute = focustimer;
-let seconds = 0;
+let seconds = focusseconds;
 let changeButton = true;
 
 // CSS Change
@@ -46,6 +48,7 @@ let optionsTime = document.getElementById("optionsTime");
 let ffocustime = document.getElementById("ffocustime");
 let fbreaktime = document.getElementById("fbreaktime");
 let message = document.getElementById("message");
+let messageError = document.getElementById("messageError");
 
 //
 // Call functions
@@ -65,19 +68,39 @@ buttonReset.addEventListener("click", () => {
 
 settings.addEventListener("click", () => {
     settingPop.showModal();
+    tapButton.currentTime = 0;
+    tapButton.play();
 });
 
 optionsTime.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (ffocustime.value != "") focustimer = Number(ffocustime.value.split(":")[0]);
-    if (fbreaktime.value != "") breaktimer = Number(fbreaktime.value.split(":")[0]);
-    reset()
-    minute = focustimer;
+    convertFfocusMinute = Number(ffocustime.value.split(":")[0]);
+    convertFfocusSeconds = Number(ffocustime.value.split(":")[1]);
+    convertFbreakMinute = Number(fbreaktime.value.split(":")[0]);
+    convertFbreakSeconds = Number(fbreaktime.value.split(":")[1]);
 
-    console.log("Focus:", focustimer);
-    console.log("Break:", breaktimer);
 
-    message.style.display = "revert";
+    if (convertFfocusSeconds <= 60 || convertFbreakSeconds <= 60){
+        if (ffocustime.value != "") { 
+            focustimer = convertFfocusMinute;
+            focusseconds = convertFfocusSeconds;
+        }
+        if (fbreaktime.value != "") {
+            breaktimer = convertFbreakMinute;
+            breakseconds = convertFbreakSeconds;
+        }
+
+        reset()
+        messageError.style.display = "none";
+        message.style.display = "revert";
+    }
+    else if (Number.isNaN(convertFbreakSeconds) || Number.isNaN(convertFfocusSeconds)) {
+        message.style.display = "none";
+        messageError.style.display = "revert";
+    }
+    
+    tapButton.currentTime = 0;
+    tapButton.play();
 });
 
 
@@ -144,7 +167,7 @@ function reset() {
 function typeCycle(){
     if (cycle != 2){
         minute = focustimer;
-        seconds = 0;
+        seconds = focusseconds;
         changeMode(false);
         logoImage.src = "./assets/image/logo.png";
         aspasImage.src = "./assets/image/aspas.png";
@@ -153,7 +176,7 @@ function typeCycle(){
     }
     else {
         minute = breaktimer;
-        seconds = 0;
+        seconds = breakseconds;
         changeMode(true);
         logoImage.src = "./assets/image/logoBreak.png";
         aspasImage.src = "./assets/image/aspasBreak.png";
