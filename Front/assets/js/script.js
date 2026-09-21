@@ -14,7 +14,9 @@ let settingPop = document.getElementById("settingPop");
 let idStart;
 
 let cycle = 1;
-let minute = 30;
+let focustimer = 30;
+let breaktimer = 15;
+let minute = focustimer;
 let seconds = 0;
 let changeButton = true;
 
@@ -39,6 +41,12 @@ let timeline3 = document.getElementById("timeline3");
 let soundChangeCycle = new Audio("./assets/audio/alarm.mp3");
 let tapButton = new Audio("./assets/audio/tap.mp3");
 
+// settings
+let optionsTime = document.getElementById("optionsTime");
+let ffocustime = document.getElementById("ffocustime");
+let fbreaktime = document.getElementById("fbreaktime");
+let message = document.getElementById("message");
+
 //
 // Call functions
 //
@@ -56,8 +64,21 @@ buttonReset.addEventListener("click", () => {
 });
 
 settings.addEventListener("click", () => {
-    settingPop.showModal()
-})
+    settingPop.showModal();
+});
+
+optionsTime.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (ffocustime.value != "") focustimer = Number(ffocustime.value.split(":")[0]);
+    if (fbreaktime.value != "") breaktimer = Number(fbreaktime.value.split(":")[0]);
+    reset()
+    minute = focustimer;
+
+    console.log("Focus:", focustimer);
+    console.log("Break:", breaktimer);
+
+    message.style.display = "revert";
+});
 
 
 //
@@ -87,14 +108,14 @@ function timer() {
     if (seconds <= 0) {
         minute--;
 
-        if (minute > 0){
+        if (minute >= 0){
             seconds = 60;
         }
     }
 
     // Check if the timer ended.
     if (minute === 0 && seconds === 1) {
-        cycle >= 3 || cycle < 0? cycle = 1 : cycle+=1;
+        cycle >= 3 || cycle < 0 ? cycle = 1 : cycle+=1;
         cycleText.innerText = `Cycle ${String(cycle)} of 3`;
         tapButton.currentTime = 0;
         soundChangeCycle.currentTime = 0;
@@ -114,7 +135,7 @@ function reset() {
     typeCycle();
     clearInterval(idStart);
     timerDisplay.innerText = `${String(minute).padStart(2, "0")} : ${String(seconds).padStart(2, "0")}`;
-    changeButton = !changeButton;
+    changeButton = true;
     buttonStart.innerText = "Start";
     buttonStart.classList.remove("paused");
 }
@@ -122,7 +143,7 @@ function reset() {
 // Cycle mode
 function typeCycle(){
     if (cycle != 2){
-        minute = 30;
+        minute = focustimer;
         seconds = 0;
         changeMode(false);
         logoImage.src = "./assets/image/logo.png";
@@ -131,7 +152,7 @@ function typeCycle(){
         changeCycleText();
     }
     else {
-        minute = 15;
+        minute = breaktimer;
         seconds = 0;
         changeMode(true);
         logoImage.src = "./assets/image/logoBreak.png";

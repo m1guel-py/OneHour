@@ -141,7 +141,7 @@ main aside hr {
 .select:hover {
     background-color: #2A2A2A;
     color: var(--texthover);
-    border-color: var(--borderhober);
+    border-color: var(--borderhover);
 }
 
 .select.paused {
@@ -238,3 +238,44 @@ SETTINGPOPUP
 #settings {
     cursor: pointer;
 }
+
+#settingPop {
+    width: 592px;
+    height: 647px;
+    background-color: var(--background);
+    color: var(--textall);
+    border: none;
+}
+
+#centertext {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.options {
+    margin-bottom: 15px;
+}
+
+.inputTime {
+    width: 61px;
+    height: 20px;
+    background-color: var(--widgetbackground);
+    color: var(--textall);
+    text-align: center;
+    border: none;
+}
+
+#subtime {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#message {
+    display: none;
+    color: var(--texthover);
+    position: absolute;
+    bottom: 20px;
+    margin-left: 35%;
+}
+
